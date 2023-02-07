@@ -54,14 +54,17 @@ a {
 }
 
 .not-found-container {
-  height: 100vh;
-  width: 100%;
   background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-size: 70px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 .not-found-container h1 {
   font-size: 25px;
@@ -74,7 +77,7 @@ a {
 .nav-bar {
   height: 100px;
   width: 100%;
-  background-color: #292929;
+  background-color: #151515;
   position: fixed;
   left: 0;
   top: 0;
@@ -84,7 +87,6 @@ a {
     transition: 0.3s;
     height: 100vh;
     width: 320px;
-    background-color: #101010;
     left: -350px;
   }
   .nav-bar.active {
@@ -128,11 +130,11 @@ a {
 }
 @media (max-width: 767.98px) {
   .nav-bar .links a.active {
-    background-color: #363636;
+    background-color: #292929;
   }
 }
 .nav-bar .links a:hover {
-  background-color: #363636;
+  background-color: #292929;
 }
 .nav-bar .links .nav-logo {
   display: none;
@@ -164,9 +166,10 @@ a {
   }
 }
 .menu-burger .burger {
-  width: 35px;
-  height: 3px;
-  transition: 0.3s;
+  width: 30px;
+  height: 4px;
+  border-radius: 4px;
+  transition: 0.1s;
   background-color: gray;
   position: absolute;
   left: 50%;
@@ -175,46 +178,127 @@ a {
 }
 .menu-burger .burger::before {
   content: "";
-  transition: 0.3s;
+  transition: 0.1s;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   top: -10px;
-  width: 35px;
-  height: 3px;
+  width: inherit;
+  height: inherit;
+  border-radius: 4px;
   background-color: inherit;
 }
 .menu-burger .burger::after {
   content: "";
-  transition: 0.3s;
+  transition: 0.1s;
   position: absolute;
   right: 50%;
   transform: translateX(50%);
   top: 10px;
-  width: 35px;
-  height: 3px;
+  width: inherit;
+  height: inherit;
+  border-radius: 4px;
   background-color: inherit;
 }
 .menu-burger .burger.active {
-  transition: 0.3s;
-  width: 30px;
+  transition: 0.1s;
+  width: 28px;
 }
 .menu-burger .burger.active::before {
   content: "";
-  transition: 0.3s;
-  width: 20px;
+  transition: 0.1s;
+  width: 18px;
 }
 .menu-burger .burger.active::after {
-  transition: 0.3s;
+  transition: 0.1s;
   content: "";
-  width: 20px;
+  width: 18px;
 }
 
 /***** footer *****/
 .footer {
   width: 100%;
   height: 140px;
-  background-color: #292929;
+  background-color: #151515;
+  margin-top: 40px;
+}
+@media (max-width: 599.98px) {
+  .footer {
+    height: auto;
+  }
+}
+.footer .footer-flex {
+  display: flex;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.5px solid gray;
+}
+@media (max-width: 599.98px) {
+  .footer .footer-flex {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 0 20px 0;
+  }
+}
+.footer .footer-flex:last-child {
+  border: none;
+}
+.footer .footer-flex .footer-link {
+  display: flex;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+.footer .footer-flex .footer-link a {
+  margin-left: 10px;
+  letter-spacing: 0.5px;
+  color: rgb(216, 117, 117);
+  text-decoration: underline;
+}
+.footer .footer-flex .footer-link-massage {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 599.98px) {
+  .footer .footer-flex .footer-link-massage {
+    margin-top: 20px;
+  }
+}
+.footer .footer-flex .footer-link-massage a {
+  margin: 0 10px;
+  transition: 0.2s;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer .footer-flex .footer-link-massage a:hover {
+  transition: 0.2s;
+  box-shadow: 0 0 10px rgb(92, 211, 226);
+  border-color: rgb(92, 211, 226);
+}
+.footer .footer-flex .footer-link-massage a:hover svg {
+  fill: rgb(92, 211, 226);
+  transition: 0.2s;
+}
+.footer .footer-flex .footer-link-massage a svg {
+  transition: 0.2s;
+  fill: #fff;
+}
+.footer .footer-flex .footer-author {
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 599.98px) {
+  .footer .footer-flex .footer-author {
+    margin-top: 20px;
+  }
+}
+.footer .footer-flex .footer-author span {
+  margin-right: 10px;
 }
 
 /**********/
