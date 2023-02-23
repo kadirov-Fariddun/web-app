@@ -36,7 +36,7 @@ export default function Footer() {
               <img src={logo} alt="Logotype" width='125px' />
             </div>
             <div className="footer-author">
-              <span>0+</span> © Barcha Huquqlar himoyalangan
+              <span>0+</span> © Created by Jurayev and Kadirov
             </div>
           </div>
         </div>

@@ -49,6 +49,18 @@ a {
   }
 }
 
+.red-card {
+  width: 10px;
+  height: 20px;
+  background-color: red;
+}
+
+.yellow-card {
+  width: 10px;
+  height: 20px;
+  background-color: yellow;
+}
+
 .not-found {
   text-decoration: underline;
 }
@@ -302,5 +314,20 @@ a {
 }
 
 /**********/
+/******* match ******/
+.matches .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.matches .container .match-data {
+  width: calc(50% - 40px);
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+.matches .container .match-data-flex {
+  display: flex;
+  justify-content: space-between;
+}
 
 /*# sourceMappingURL=index.css.map */
