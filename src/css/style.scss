@@ -4,6 +4,7 @@
 // переменные
 $bp900: 899.98px;
 $bp768: 767.98px;
+$bp700: 699.98px;
 $bp600: 599.98px;
 $bp545: 544.98px;
 $bp480: 479.98px;
@@ -14,6 +15,7 @@ body {
     margin: 0;
     padding: 0px;
     font-family: 'Archivo Narrow', sans-serif;
+    background-color: #f8f9fb;
 }
 
 * {
@@ -105,6 +107,7 @@ a {
     position: fixed;
     left: 0;
     top: 0;
+    z-index: 100;
 
     @media (max-width:$bp768) {
         transition: .3s;
@@ -255,6 +258,7 @@ a {
     height: 140px;
     background-color: #151515;
     margin-top: 40px;
+    z-index: 100;
 
     @media(max-width:$bp600) {
         height: auto;
@@ -350,15 +354,89 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 1px;
 
     .match-data {
-        width: calc(50% - 40px);
-        margin-bottom: 20px;
-        padding: 0 20px;
+        width: calc(50% - 41px);
+        padding: 10px 20px;
+        row-gap: 1px;
+        box-shadow: 0 0 10px -4px #ccc;
+        background-color: #fff;
+        &:hover{
+            transition: .2s;
+            background-color: #f7f8f7;
+        }
+        @media(max-width:$bp700){
+            width:100%;
+        }
+    }
+
+    .tour {
+        margin-bottom: 10px;
     }
 
     .match-data-flex {
         display: flex;
-        justify-content: space-between;
+        align-items: center;
+
+        .match {
+            flex: auto;
+            border-right: .5px solid #ccc;
+            padding: 0 20px 0 0;
+            @media(max-width:$bp480){
+                padding: 0 10px 0 0;
+            }
+
+            .team-home,
+            .team-guest {
+                margin-bottom: 10px;
+                font-size: 15px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                font-weight:600;
+                @media(max-width:$bp480){
+                    font-size: 13px;
+                }
+                &.color-lose{
+                    color: gray;
+                    font-weight: normal;
+                }
+
+                img:first-child {
+                    margin-right: 8px;
+                }
+
+                .shot {
+                    margin-left: auto;
+                    font-weight: 500;
+                }
+
+                img.win-dotter{
+                    position: absolute;
+                    right: -19px;
+                    @media(max-width:$bp480){
+                        right: -9px;
+                    }
+                }
+            }
+        }
+        .match-info{
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            @media(max-width:$bp480){
+                font-size: 13px;
+            }
+            iframe{
+                margin-top: 10px;
+                @media(max-width:$bp480){
+                    width: 45px;
+                    height: 25px;
+                }
+            }
+        }
     }
 }

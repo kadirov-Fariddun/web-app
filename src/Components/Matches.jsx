@@ -1,6 +1,8 @@
 import { React, useEffect, useState } from 'react';
 import winTeam from '../img/win-team.png';
+import logoTeam from '../img/uzbekistan.png';
 import axios from 'axios';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const URL = 'https://premiyerliga.pythonanywhere.com/api/v1';
@@ -34,20 +36,20 @@ export default function Matches() {
                 console.log(item, index);
                 return (
                   <>
-                    <div className="match-data">
+                    <NavLink to='/teams' className="match-data" key={index}>
                       <h4 className="tour">
                         {item.tour}
                         <span>-tur</span>
                       </h4>
                       <div className="match-data-flex">
                         <div className="match">
-                          <div className="team-home">
-                            {item.home.name} <span>{item.details.home_point}</span>
-                            {item.details.home_point > item.details.guest_point ? <img src={winTeam} height='8px' alt='png' /> : ''}
+                          <div className={`team-home ${item.details.home_point < item.details.guest_point ? 'color-lose': ''}`}>
+                           <img src={logoTeam} alt="logo team" width='25px' height='15px'/> {item.home.name} <span className='shot'>{item.details.home_point}</span>
+                            {item.details.home_point > item.details.guest_point ? <img src={winTeam} className='win-dotter' height='8px' alt='png' /> : ''}
                           </div>
-                          <div className="team-guest">
-                            {item.guest.name} <span>{item.details.guest_point}</span>
-                            {item.details.guest_point > item.details.home_point ? <img src={winTeam} height='8px' alt='png' /> : ''}
+                          <div className={`team-guest ${item.details.home_point > item.details.guest_point ? 'color-lose': ''}`}>
+                          <img src={logoTeam} alt="logo team" width='25px' height='15px' /> {item.guest.name} <span className='shot'>{item.details.guest_point}</span>
+                            {item.details.guest_point > item.details.home_point ? <img src={winTeam} className='win-dotter' height='8px' alt='png' /> : ''}
                           </div>
                         </div>
                         <div className="match-info">
@@ -55,13 +57,12 @@ export default function Matches() {
                             {item.date}
                           </div>
                           <div className="match-link-video">
-                            <a href="https://www.youtube.com/watch?v=_dBz4dTZocg" target='_blank'>
-                              <img src="https://i.ytimg.com/an_webp/_dBz4dTZocg/mqdefault_6s.webp?du=3000&sqp=CIjc3p8G&rs=AOn4CLCGLU1UDhKBoSQIkRjwQdHKikPspQ" alt="video" width='50px' height='30px' />
-                            </a>
+                            {item.details.link ? <iframe width="60" height="40" src={item.details.link} title="YouTube video player" frameborder="0" allowfullscreen>
+                            </iframe> : ''}
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </NavLink>
                   </>
                 )
               })
