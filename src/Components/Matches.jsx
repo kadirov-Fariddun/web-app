@@ -57,7 +57,10 @@ export default function Matches() {
                       <div className="match-data-flex">
                         <div className="match">
                           <div key={item.home.id} className={`team-home ${item.details.home_point < item.details.guest_point ? 'color-lose' : ''}`}>
-                            <img src={logoTeam} alt="logo team" width='25px' height='15px' /> {item.home.name} <span className='shot'>{item.details.home_point}</span>
+                            <img src={logoTeam} alt="logo team" width='25px' height='15px' /> {item.home.name}
+                            {item.details.home_yellow_card > 0 ? <span className='yellow-card'>{item.details.home_yellow_card > 1 ? item.details.home_yellow_card : ''}</span> : ''}
+                            {item.details.home_red_card > 0 ? <span className='red-card'>{item.details.home_red_card > 1 ? item.details.home_red_card : ''}</span> : ''}
+                            <span className='shot'>{item.details.home_point}</span>
                             {item.details.home_point > item.details.guest_point ? <img src={winTeam} className='win-dotter' height='8px' alt='png' /> : ''}
                           </div>
                           <div key={item.guest.id} className={`team-guest ${item.details.home_point > item.details.guest_point ? 'color-lose' : ''}`}>

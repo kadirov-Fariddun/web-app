@@ -97,15 +97,28 @@ a {
 }
 
 .red-card {
-  width: 10px;
+  width: 15px;
   height: 20px;
   background-color: red;
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ccc;
+  font-size: 13px;
 }
 
 .yellow-card {
-  width: 10px;
+  width: 15px;
   height: 20px;
-  background-color: yellow;
+  background-color: rgb(209, 209, 23);
+  margin: 0 5px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: #000;
 }
 
 .not-found {
