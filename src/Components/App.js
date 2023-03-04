@@ -10,16 +10,15 @@ import Teams from "./Teams";
 import Kubok from "./Kubok";
 import Footer from './Footer';
 import NotFount from "./NotFount";
-
-
 function App() {
+  
   return (
     <>
       <Navibar />
       <Routes>
         <Route path='/' element={<Matches />} />
         <Route path='/news' element={<News />} />
-        <Route path='/table' element={<Table />} />
+        <Route path='/table' element={<Table lastGames={['win','draw','lose','win','lose']}/>} />
         <Route path='/stat' element={<Stat />} />
         <Route path='/teams' element={<Teams />} />
         <Route path='/kubok' element={<Kubok />} />

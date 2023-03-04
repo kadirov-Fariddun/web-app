@@ -3,9 +3,11 @@ import React from 'react'
 export default function Teams() {
   return (
     <>
-      <div className="tp">
-        <div className="container">
-          <div>Teams</div>
+      <div className="teams">
+        <div className="tp">
+          <div className="container">
+            <h1>jamoalar</h1>
+          </div>
         </div>
       </div>
     </>

@@ -6,7 +6,7 @@ export default function Preloader(props) {
     if (props.data) {
         setTimeout(() => {
             preloader.style.display = 'none';
-        }, 2100);
+        }, 1000);
 
     }
 

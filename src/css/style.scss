@@ -30,6 +30,10 @@ body {
     justify-content: center;
     align-items: center;
 
+    &.loader-none {
+        display: none;
+    }
+
 
     span {
         width: 10px;
@@ -120,28 +124,39 @@ a {
 }
 
 .red-card {
-    width: 15px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
     background-color: red;
-    margin: 0 5px;
+    margin: 0 2px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #ccc;
     font-size: 13px;
+
+    @media(max-width:$bp480) {
+        width: 8px;
+        height: 13px;
+    }
 }
 
 .yellow-card {
-    width: 15px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
     background-color: rgb(209, 209, 23);
-    margin: 0 5px;
-    margin-left: 10px;
+    margin: 0 2px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 12px;
     color: #000;
+
+    @media(max-width:$bp480) {
+        width: 8px;
+        height: 13px;
+    }
 }
 
 
@@ -426,13 +441,13 @@ a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 1px;
+    gap: 2px;
 
     .match-data {
         width: calc(50% - 41px);
         padding: 10px 20px;
         row-gap: 1px;
-        box-shadow: 0 0 10px -4px #ccc;
+        box-shadow: 0px 0px 6px -4px rgb(0, 0, 0);
         background-color: #fff;
 
         &:hover {
@@ -470,6 +485,8 @@ a {
                 display: flex;
                 align-items: center;
                 font-weight: 600;
+                white-space: nowrap;
+                text-overflow: ellipsis;
 
                 @media(max-width:$bp480) {
                     font-size: 13px;
@@ -523,6 +540,298 @@ a {
                 @media(max-width:$bp480) {
                     width: 45px;
                     height: 25px;
+                }
+            }
+        }
+    }
+}
+
+
+/******** table ***/
+.table {
+    width: 100%;
+
+    .table-flex {
+        display: flex;
+
+        div {
+            flex: 6;
+        }
+
+        .table-flex-two {
+            @media(max-width:$bp700) {
+                flex: 8;
+            }
+
+            @media(max-width:$bp600) {
+                width: 320px;
+                overflow-x: scroll;
+            }
+
+        }
+    }
+
+
+
+
+
+    table {
+        tr {
+            height: 40px;
+
+            th {
+                height: inherit;
+                white-space: nowrap;
+            }
+
+            td {
+                height: inherit;
+                white-space: nowrap;
+            }
+        }
+    }
+
+
+    // first table
+    table.table-one {
+        width: 50%;
+        margin-top: 20px;
+
+        @media(max-width:$bp600) {
+            margin-right: 20px;
+        }
+
+        @media(max-width:$bp480) {
+            margin-right: 10px;
+        }
+
+        th {
+            padding: 0 20px;
+
+            @media(max-width:$bp480) {
+                width: 70px;
+                text-overflow: ellipsis;
+            }
+        }
+
+        tr {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2px;
+
+            // number table
+            .team-number {
+                width: 40px;
+                height: inherit;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-left: 3px solid #fff;
+
+                @media(max-width:$bp480) {
+                    width: 25px;
+                    border-width: 2px;
+                }
+
+                &.liders {
+                    border-color: blue;
+                }
+
+                &.tops {
+                    border-color: orange;
+                }
+
+                &.outsiders {
+                    border-color: red;
+                }
+            }
+        }
+
+        img.logo-club {
+            margin-right: 10px;
+
+            @media(max-width:$bp480) {
+                height: 20px;
+                margin-right: 3px;
+            }
+        }
+
+        .club-name {
+            white-space: nowrap;
+
+            @media(max-width:$bp480) {
+                width: 85px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            @media(max-width:$bp480) {
+                font-size: 14px;
+            }
+        }
+    }
+
+
+    // table two 
+    .table-two {
+        margin-top: 20px;
+
+        @media(max-width:$bp600) {
+            width: 320px;
+            overflow-x: scroll;
+        }
+
+
+        th {
+            width: 40px;
+
+            @media(max-width:$bp480) {
+                font-size: 14px;
+                width: 25px;
+            }
+
+            &:last-child {
+                width: auto;
+            }
+        }
+
+        td {
+            width: 40px;
+            text-align: center;
+
+            @media(max-width:$bp480) {
+                font-size: 14px;
+                width: 25px;
+            }
+
+
+
+
+            &:last-child {
+                width: auto;
+
+
+
+                div {
+                    height: inherit;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    span {
+                        height: inherit;
+                        margin: 0 5px;
+                        display: flex;
+                        align-items: center;
+
+                        @media(max-width:$bp480) {
+                            img {
+                                width: 17px;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+    // table-footer  
+    .table-footer {
+        margin-top: 40px;
+        width: 99.5%;
+        border: 0.5px solid #ccc;
+
+
+
+        // flex 
+        .table-footer-flex {
+            display: flex;
+            padding: 10px 18px;
+        }
+
+        // info blok
+        .table-footer-info {
+            margin-right: 100px;
+
+            @media(max-width:$bp480) {
+                margin-right: 40px;
+            }
+
+            // lider info
+            .table-liders {
+                display: flex;
+                align-items: center;
+
+
+                span {
+                    width: 7px;
+                    height: 7px;
+                    background-color: blue;
+                    display: block;
+                    margin-right: 10px;
+                }
+            }
+
+            .table-tops {
+                display: flex;
+                align-items: center;
+
+
+                span {
+                    width: 7px;
+                    height: 7px;
+                    background-color: orange;
+                    display: block;
+                    margin-right: 10px;
+                }
+            }
+
+            .table-outsiders {
+                display: flex;
+                align-items: center;
+
+
+                span {
+                    width: 7px;
+                    height: 7px;
+                    background-color: red;
+                    display: block;
+                    margin-right: 10px;
+                }
+            }
+
+            .table-coments {
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    white-space: nowrap;
+
+                    span {
+                        width: 7px;
+                        height: 7px;
+                        background-color: #000;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+        .table-footer-last-5 {
+            div {
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+
+                img {
+                    margin-right: 10px;
                 }
             }
         }
