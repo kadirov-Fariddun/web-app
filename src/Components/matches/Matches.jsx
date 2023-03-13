@@ -1,12 +1,13 @@
 import { React, useEffect, useState } from 'react';
-import winTeam from '../img/win-team.png';
-import logoTeam from '../img/uzbekistan.png';
+import winTeam from '../../img/win-team.png';
+import logoTeam from '../../img/uzbekistan.png';
+import youtube from '../../img/youtube.png';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
-import Preloader from './Preloader';
+import Preloader from '../home/Preloader';
 
 
-const URL = 'https://premiyerliga.pythonanywhere.com/api/v1';
+const URL = 'https://ligaeuropa.pythonanywhere.com/api/v1';
 
 
 
@@ -37,13 +38,12 @@ export default function Matches() {
             <Preloader data={data} />
             {
               data.map((item, index) => {
-                console.log(item, index);
                 if (item.details.link) {
 
                 }
                 return (
                   <>
-                    <NavLink to='/teams' className="match-data" key={item.id}>
+                    <NavLink to={`/match-${item.id}`} className="match-data" key={item.id}>
                       <h4 className="tour">
                         {item.tour}
                         <span>-tur</span>
@@ -69,17 +69,17 @@ export default function Matches() {
                           <div className="match-date">
                             {item.date}
                           </div>
-                          <div className="match-link-video">
-                            {item.details.link ?
-                              <iframe
-                                width="60"
-                                height="40"
-                                src={item.details.link}
-                                title="YouTube video player"
-                                frameborder="0"
-                                allowfullscreen>
-                              </iframe> : ''}
-                          </div>
+                          <a target='_blank' href={item.details.link} className="match-link-video">
+                            {
+                              item.details.link ?
+                                <img
+                                  src={youtube}
+                                  width="60"
+                                  height="55"
+                                  title="YouTube video player"
+                                /> : ''
+                            }
+                          </a>
                         </div>
                       </div>
                     </NavLink>

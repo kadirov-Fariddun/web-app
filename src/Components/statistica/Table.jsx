@@ -1,11 +1,11 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import logoClub from '../img/mpliga.png';
-import winPng from '../img/win.png';
-import drawPng from '../img/draw.png';
-import losePng from '../img/lose.png';
-import Preloader from './Preloader';
-const URL = 'https://premiyerliga.pythonanywhere.com/api/v1';
+import logoClub from '../../img/mpliga.png';
+import winPng from '../../img/win.png';
+import drawPng from '../../img/draw.png';
+import losePng from '../../img/lose.png';
+import Preloader from '../home/Preloader';
+const URL = 'https://ligaeuropa.pythonanywhere.com/api/v1';
 
 export default function Table(props) {
 
@@ -97,17 +97,23 @@ export default function Table(props) {
                           </td>
                           <td className='club-last-5'>
                             <div>
-                              {
-                                props.lastGames.map((item, index) => {
-                                  return (
-                                    <span>
-                                      {item === 'win' ? <img src={winPng} alt='win' key={index} width='20px' /> : ''}
-                                      {item === 'draw' ? <img src={drawPng} alt='draw' key={index} width='20px' /> : ''}
-                                      {item === 'lose' ? <img src={losePng} alt='lose' key={index} width='20px' /> : ''}
-                                    </span>
-                                  )
-                                })
-                              }
+                              <span>
+                                {item.oxirgi_1.toLowerCase() === 'win' ? <img src={winPng} alt='win' width='20px' /> : ''}
+                                {item.oxirgi_1.toLowerCase() === 'draw' ? <img src={drawPng} alt='draw' width='18px' /> : ''}
+                                {item.oxirgi_1.toLowerCase() === 'lose' ? <img src={losePng} alt='lose' width='20px' /> : ''}
+                                {item.oxirgi_2.toLowerCase() === 'win' ? <img src={winPng} alt='win' width='20px' /> : ''}
+                                {item.oxirgi_2.toLowerCase() === 'draw' ? <img src={drawPng} alt='draw' width='18px' /> : ''}
+                                {item.oxirgi_2.toLowerCase() === 'lose' ? <img src={losePng} alt='lose' width='20px' /> : ''}
+                                {item.oxirgi_3.toLowerCase() === 'win' ? <img src={winPng} alt='win' width='20px' /> : ''}
+                                {item.oxirgi_3.toLowerCase() === 'draw' ? <img src={drawPng} alt='draw' width='18px' /> : ''}
+                                {item.oxirgi_3.toLowerCase() === 'lose' ? <img src={losePng} alt='lose' width='20px' /> : ''}
+                                {item.oxirgi_4.toLowerCase() === 'win' ? <img src={winPng} alt='win' width='20px' /> : ''}
+                                {item.oxirgi_4.toLowerCase() === 'draw' ? <img src={drawPng} alt='draw' width='18px' /> : ''}
+                                {item.oxirgi_4.toLowerCase() === 'lose' ? <img src={losePng} alt='lose' width='20px' /> : ''}
+                                {item.oxirgi_5.toLowerCase() === 'win' ? <img src={winPng} alt='win' width='20px' /> : ''}
+                                {item.oxirgi_5.toLowerCase() === 'draw' ? <img src={drawPng} alt='draw' width='18px' /> : ''}
+                                {item.oxirgi_5.toLowerCase() === 'lose' ? <img src={losePng} alt='lose' width='20px' /> : ''}
+                              </span>
                             </div>
                           </td>
                         </tr>

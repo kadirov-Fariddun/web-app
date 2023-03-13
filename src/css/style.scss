@@ -104,7 +104,7 @@ a {
     width: 100%;
 
     @media(max-width:$bp768) {
-        padding-top: 20px;
+        padding-top: 70px;
     }
 }
 
@@ -136,8 +136,13 @@ a {
     font-size: 13px;
 
     @media(max-width:$bp480) {
-        width: 8px;
+        width: 13px;
         height: 13px;
+    }
+
+    @media(max-width:$bp320) {
+        width: 8px;
+        height: 8px;
     }
 }
 
@@ -154,8 +159,13 @@ a {
     color: #000;
 
     @media(max-width:$bp480) {
-        width: 8px;
+        width: 13px;
         height: 13px;
+    }
+
+    @media(max-width:$bp320) {
+        width: 8px;
+        height: 8px;
     }
 }
 
@@ -278,6 +288,7 @@ a {
     height: 30px;
     cursor: pointer;
     display: none;
+    z-index: 999;
 
     @media(max-width:$bp768) {
         display: block;
@@ -449,6 +460,9 @@ a {
         row-gap: 1px;
         box-shadow: 0px 0px 6px -4px rgb(0, 0, 0);
         background-color: #fff;
+        z-index: 19;
+
+
 
         &:hover {
             transition: .2s;
@@ -724,6 +738,10 @@ a {
                         display: flex;
                         align-items: center;
 
+                        img {
+                            margin: 0 2px;
+                        }
+
                         @media(max-width:$bp480) {
                             img {
                                 width: 17px;
@@ -735,6 +753,7 @@ a {
             }
         }
     }
+
 
 
 
@@ -835,5 +854,362 @@ a {
                 }
             }
         }
+    }
+}
+
+
+
+//// news
+.news {
+
+    a {
+        width: 100%;
+        margin-bottom: 20px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .news-card {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+
+            // flex card
+            .news-card-flex {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                @media(max-width:$bp480) {
+                    flex-direction: column;
+                }
+
+                // title and body section
+                .news-card-title-body {
+
+                    @media(max-width:$bp480) {
+                        order: 2;
+                        margin-top: 20px;
+                    }
+
+                    // title 
+                    .news-card-title {
+                        color: blue;
+                        font-size: 18px;
+                        letter-spacing: .5px;
+                        margin-bottom: 10px;
+
+                        @media(max-width:$bp480) {
+                            text-align: center;
+                        }
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+                    .news-card-author {
+                        color: rgb(0, 0, 0, .5);
+                        font-weight: 600;
+
+                        @media(max-width:$bp480) {
+                            text-align: center;
+                        }
+
+                        span {
+                            font-size: 14px;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+
+                .news-card-image {
+                    img {
+                        border-radius: 7px;
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.news-link-history {
+    font-size: 14px;
+    color: blue;
+    opacity: .6;
+    text-decoration: underline;
+    margin-bottom: 40px;
+}
+
+.news-link-title {
+    font-weight: 600;
+    letter-spacing: .6px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.news-link-image {
+    img {
+        @media(max-width:$bp600) {
+            width: 100%;
+        }
+
+        border-radius: 10px;
+    }
+
+    margin-bottom: 20px;
+}
+
+.news-link-body {
+    line-height: 30px;
+    letter-spacing: .6px;
+    margin-bottom: 20px;
+}
+
+.news-link-author {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: gray;
+}
+
+
+// id match styles 
+.match-date {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 15px;
+    opacity: .8;
+    margin-bottom: 20px;
+
+    .mpl-name {
+
+        span {
+            margin-left: 10px;
+            color: #817f7f;
+        }
+    }
+
+
+}
+
+.match-teams {
+    display: flex;
+    padding: 0 100px;
+    justify-content: space-between;
+
+    @media(max-width:$bp480) {
+        padding: 0 40px;
+    }
+
+    .match-team-flex {
+        display: flex;
+        align-items: center;
+
+
+        .team-home {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 150px;
+
+            @media(max-width:$bp700) {
+                img {
+                    width: 60px;
+                }
+            }
+
+            @media(max-width:$bp480) {
+                img {
+                    width: 40px;
+                }
+            }
+
+            span {
+                font-weight: 600;
+                font-size: 18px;
+
+                @media(max-width:$bp700) {
+                    font-size: 16px;
+
+                    @media(max-width:$bp480) {
+
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+
+        .team-home-point {
+            font-size: 40px;
+            margin-left: 50px;
+
+            @media(max-width:$bp700) {
+                font-size: 30px;
+                margin-left: 25px;
+
+                @media(max-width:$bp480) {
+
+                    font-size: 20px;
+                    margin-left: 10px;
+                }
+            }
+        }
+
+
+
+        // team guest
+        .team-guest {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 150px;
+
+            @media(max-width:$bp700) {
+                img {
+                    width: 60px;
+                }
+            }
+
+            @media(max-width:$bp480) {
+                img {
+                    width: 40px;
+                }
+            }
+
+            span {
+                font-weight: 600;
+                font-size: 18px;
+
+                @media(max-width:$bp700) {
+                    font-size: 16px;
+
+                    @media(max-width:$bp480) {
+
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+
+        .team-guest-point {
+            font-size: 40px;
+            margin-right: 50px;
+
+            @media(max-width:$bp700) {
+                font-size: 30px;
+                margin-right: 25px;
+
+                @media(max-width:$bp480) {
+
+                    font-size: 20px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+
+    .match-defis {
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+
+        @media(max-width:$bp700) {
+            font-size: 30px;
+        }
+    }
+
+    .match-team-flex-2 {
+        justify-content: flex-end;
+    }
+
+    .match-team-guest-stat {
+
+        div {
+            text-align: right;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                margin: 0 5px;
+            }
+        }
+    }
+}
+
+.match-video {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+
+    .match-link-video {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .youtube {
+        position: absolute;
+        width: 70%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(0, 0, 0, .5);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: .2s;
+
+        @media(max-width:$bp480) {
+            width: 100%;
+        }
+
+        img {
+            transition: .2s;
+
+            @media(max-width:$bp480) {
+                width: 70px;
+            }
+        }
+
+        &:hover {
+            transition: .2s;
+
+            img {
+                transition: .2s;
+                transform: rotate(360deg);
+            }
+        }
+    }
+}
+
+.match-team-home-stat {
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            margin: 0 5px;
+        }
+    }
+}
+
+.link-video-youtube {
+    @media(max-width:$bp480) {
+        width: 100%;
     }
 }
