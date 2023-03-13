@@ -1,17 +1,21 @@
 {
   "files": {
-    "main.css": "/web-app/static/css/main.930d8133.css",
-    "main.js": "/web-app/static/js/main.f2cd904d.js",
+    "main.css": "/web-app/static/css/main.a9ac77ce.css",
+    "main.js": "/web-app/static/js/main.9e7049f8.js",
     "static/js/787.c6006e9a.chunk.js": "/web-app/static/js/787.c6006e9a.chunk.js",
     "static/media/mpliga.png": "/web-app/static/media/mpliga.87263fdccbbebe7a85d0.png",
+    "static/media/news-football.jpg": "/web-app/static/media/news-football.02fcf8560140833f797a.jpg",
+    "static/media/red-card.png": "/web-app/static/media/red-card.ed56f58fea92f5bdcfd5.png",
+    "static/media/yellow-card.png": "/web-app/static/media/yellow-card.32c9e6a9bba00367c2d3.png",
     "static/media/logo.png": "/web-app/static/media/logo.f7e3c0267115276dae80.png",
+    "static/media/ball.png": "/web-app/static/media/ball.ee55f3ea9616439b3978.png",
     "index.html": "/web-app/index.html",
-    "main.930d8133.css.map": "/web-app/static/css/main.930d8133.css.map",
-    "main.f2cd904d.js.map": "/web-app/static/js/main.f2cd904d.js.map",
+    "main.a9ac77ce.css.map": "/web-app/static/css/main.a9ac77ce.css.map",
+    "main.9e7049f8.js.map": "/web-app/static/js/main.9e7049f8.js.map",
     "787.c6006e9a.chunk.js.map": "/web-app/static/js/787.c6006e9a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.930d8133.css",
-    "static/js/main.f2cd904d.js"
+    "static/css/main.a9ac77ce.css",
+    "static/js/main.9e7049f8.js"
   ]
 }
